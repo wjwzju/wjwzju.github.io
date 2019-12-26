@@ -1,10 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>conda命令</title>
+    <url>/2019/12/26/conda%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>一些常用的conda命令总结</p>
+<a id="more"></a>
+
+<h1 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h1><ol>
+<li><p>查看当前存在哪些虚拟环境（当前被激活的环境会显示有一个星号或者括号。）</p>
+<pre><code>conda env list 或者 conda info -e</code></pre></li>
+<li><p>创建一个名为ml的环境，同时指定python版本为3.x（conda会自动寻找3.x中最新的版本）</p>
+<pre><code>conda create --name ml python=3.x</code></pre></li>
+<li><p>激活某个环境</p>
+<pre><code>activate ml # for Wins
+source activate ml # for Linux or Mac</code></pre></li>
+<li><p>返回默认的环境</p>
+<pre><code>deactivate ml # for Wins
+source deactivate ml # for Linux or Mac</code></pre></li>
+<li><p>删除一个已有的环境 </p>
+<pre><code>conda remove --name ml --all</code></pre></li>
+</ol>
+<h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><ol>
+<li><p>安装包</p>
+<pre><code>conda install -n ml numpy</code></pre><p> 如果不用-n指定环境名称，则被安装在当前活跃环境，也可以通过-c指定通过某个channel安装</p>
+</li>
+<li><p>更新包</p>
+<pre><code>conda update -n ml numpy</code></pre></li>
+<li><p>删除包</p>
+<pre><code>conda remove -n ml numpy</code></pre></li>
+<li><p>查看当前环境下已安装的包</p>
+<pre><code>conda list</code></pre></li>
+<li><p>查看某个指定环境的已安装包</p>
+<pre><code>conda list -n ml</code></pre></li>
+<li><p>查找package信息</p>
+<pre><code>conda search numpy</code></pre></li>
+<li><p>conda将conda、python等都视为package，因此，完全可以使用conda来管理conda和python的版本，例如</p>
+<pre><code># 更新conda，保持conda最新
+conda update conda
+# 更新anaconda
+conda update anaconda     
+# 更新python
+conda update python</code></pre></li>
+</ol>
+<h1 id="设置国内镜像"><a href="#设置国内镜像" class="headerlink" title="设置国内镜像"></a>设置国内镜像</h1><ol>
+<li><p>我使用的清华的Anaconda仓库的镜像</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code></pre></li>
+</ol>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
+<li><p>使jupyter支持虚拟运行环境：</p>
+<pre><code>conda install nb_conda</code></pre></li>
+</ol>
+]]></content>
+      <categories>
+        <category>conda</category>
+      </categories>
+      <tags>
+        <tag>conda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>圣诞快乐</title>
     <url>/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/</url>
     <content><![CDATA[<p>Happy Christmas to u, my xia!</p>
 ]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
       <tags>
         <tag>with xla</tag>
       </tags>

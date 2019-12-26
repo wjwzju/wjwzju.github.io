@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="with xla," />
+  <meta name="keywords" content="conda," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Happy Christmas to u, my xia!">
+<meta name="description" content="一些常用的conda命令总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="圣诞快乐">
-<meta property="og:url" content="http://yoursite.com/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/index.html">
+<meta property="og:title" content="conda命令">
+<meta property="og:url" content="http://yoursite.com/2019/12/26/conda%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="On the way">
-<meta property="og:description" content="Happy Christmas to u, my xia!">
-<meta property="article:published_time" content="2019-12-24T16:02:39.000Z">
-<meta property="article:modified_time" content="2019-12-26T08:11:04.684Z">
+<meta property="og:description" content="一些常用的conda命令总结">
+<meta property="article:published_time" content="2019-12-26T09:13:28.000Z">
+<meta property="article:modified_time" content="2019-12-26T10:40:21.067Z">
 <meta property="article:author" content="Jingwen">
-<meta property="article:tag" content="with xla">
+<meta property="article:tag" content="conda">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/25/圣诞快乐/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/26/conda命令/"/>
 
 
 
 
 
-  <title>圣诞快乐 | On the way</title>
+  <title>conda命令 | On the way</title>
   
 
 
@@ -325,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/conda%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jingwen">
@@ -342,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">圣诞快乐</h1>
+          <h1 class="post-title" itemprop="name headline">conda命令</h1>
         
 
         <div class="post-meta">
@@ -354,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T00:02:39+08:00">
-                2019-12-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-26T17:13:28+08:00">
+                2019-12-26
               </time>
             
 
@@ -377,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/conda/" itemprop="url" rel="index">
+                    <span itemprop="name">conda</span>
                   </a>
                 </span>
 
@@ -395,9 +395,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/#comments" itemprop="discussionUrl">
+                <a href="/2019/12/26/conda%E5%91%BD%E4%BB%A4/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/12/25/圣诞快乐/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/12/26/conda命令/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +405,7 @@
 
           
           
-             <span id="/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/" class="leancloud_visitors" data-flag-title="圣诞快乐">
+             <span id="/2019/12/26/conda%E5%91%BD%E4%BB%A4/" class="leancloud_visitors" data-flag-title="conda命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -441,7 +441,53 @@
       
 
       
-        <p>Happy Christmas to u, my xia!</p>
+        <p>一些常用的conda命令总结</p>
+<a id="more"></a>
+
+<h1 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h1><ol>
+<li><p>查看当前存在哪些虚拟环境（当前被激活的环境会显示有一个星号或者括号。）</p>
+<pre><code>conda env list 或者 conda info -e</code></pre></li>
+<li><p>创建一个名为ml的环境，同时指定python版本为3.x（conda会自动寻找3.x中最新的版本）</p>
+<pre><code>conda create --name ml python=3.x</code></pre></li>
+<li><p>激活某个环境</p>
+<pre><code>activate ml # for Wins
+source activate ml # for Linux or Mac</code></pre></li>
+<li><p>返回默认的环境</p>
+<pre><code>deactivate ml # for Wins
+source deactivate ml # for Linux or Mac</code></pre></li>
+<li><p>删除一个已有的环境 </p>
+<pre><code>conda remove --name ml --all</code></pre></li>
+</ol>
+<h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><ol>
+<li><p>安装包</p>
+<pre><code>conda install -n ml numpy</code></pre><p> 如果不用-n指定环境名称，则被安装在当前活跃环境，也可以通过-c指定通过某个channel安装</p>
+</li>
+<li><p>更新包</p>
+<pre><code>conda update -n ml numpy</code></pre></li>
+<li><p>删除包</p>
+<pre><code>conda remove -n ml numpy</code></pre></li>
+<li><p>查看当前环境下已安装的包</p>
+<pre><code>conda list</code></pre></li>
+<li><p>查看某个指定环境的已安装包</p>
+<pre><code>conda list -n ml</code></pre></li>
+<li><p>查找package信息</p>
+<pre><code>conda search numpy</code></pre></li>
+<li><p>conda将conda、python等都视为package，因此，完全可以使用conda来管理conda和python的版本，例如</p>
+<pre><code># 更新conda，保持conda最新
+conda update conda
+# 更新anaconda
+conda update anaconda     
+# 更新python
+conda update python</code></pre></li>
+</ol>
+<h1 id="设置国内镜像"><a href="#设置国内镜像" class="headerlink" title="设置国内镜像"></a>设置国内镜像</h1><ol>
+<li><p>我使用的清华的Anaconda仓库的镜像</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code></pre></li>
+</ol>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
+<li><p>使jupyter支持虚拟运行环境：</p>
+<pre><code>conda install nb_conda</code></pre></li>
+</ol>
 
       
     </div>
@@ -459,7 +505,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/with-xla/" rel="tag"># with xla</a>
+            <a href="/tags/conda/" rel="tag"># conda</a>
           
         </div>
       
@@ -472,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/24/%E5%BA%8F/" rel="next" title="序">
-                <i class="fa fa-chevron-left"></i> 序
+              <a href="/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/" rel="next" title="圣诞快乐">
+                <i class="fa fa-chevron-left"></i> 圣诞快乐
               </a>
             
           </div>
@@ -481,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/26/conda%E5%91%BD%E4%BB%A4/" rel="prev" title="conda命令">
-                conda命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,8 +588,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -611,6 +662,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境管理"><span class="nav-number">1.</span> <span class="nav-text">环境管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包管理"><span class="nav-number">2.</span> <span class="nav-text">包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置国内镜像"><span class="nav-number">3.</span> <span class="nav-text">设置国内镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -797,9 +864,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2019/12/25/%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/';
-          this.page.identifier = '2019/12/25/圣诞快乐/';
-          this.page.title = '圣诞快乐';
+          this.page.url = 'http://yoursite.com/2019/12/26/conda%E5%91%BD%E4%BB%A4/';
+          this.page.identifier = '2019/12/26/conda命令/';
+          this.page.title = 'conda命令';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://test.disqus.com/embed.js';
