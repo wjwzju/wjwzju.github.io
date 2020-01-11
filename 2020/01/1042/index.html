@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
+<meta name="description" content="原题: Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid &quot;inside jobs&quot; where employees collaborate with gam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT (甲级) 1042 Shuffling Machine (20分)">
 <meta property="og:url" content="https://wjwzju.github.io/2020/01/1042/index.html">
 <meta property="og:site_name" content="On the way">
-<meta property="og:description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
+<meta property="og:description" content="原题: Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid &quot;inside jobs&quot; where employees collaborate with gam">
 <meta property="article:published_time" content="2020-01-04T12:16:38.000Z">
-<meta property="article:modified_time" content="2020-01-11T09:14:17.324Z">
+<meta property="article:modified_time" content="2020-01-11T09:23:39.632Z">
 <meta property="article:author" content="Jingwen">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="PAT">
@@ -506,7 +506,9 @@
       
 
       
-        <h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.</p>
+        <h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><br>
+Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid "inside jobs" where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.
+
 <p>The machine shuffles a deck of 54 cards according to a given random order and repeats for a given number of times. It is assumed that the initial status of a card deck is in the following order:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S1, S2, ..., S13, </span><br><span class="line">H1, H2, ..., H13, </span><br><span class="line">C1, C2, ..., C13, </span><br><span class="line">D1, D2, ..., D13, </span><br><span class="line">J1, J2</span><br></pre></td></tr></table></figure>
 
@@ -525,9 +527,15 @@
 
 <a id="more"></a>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定次数和一个序列。按序打乱一副扑克牌。</p>
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　简单模拟</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。</p>
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><br>
+　　给定次数和一个序列。按序打乱一副扑克牌。
+
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><br>
+　　简单模拟
+
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><br>
+　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。
+
 <p>　　后来考虑用两个数组start（排序前的序列），end（排序后的序列）直接表示该位置是第几张牌。这样每次处理的是位置信息，而且不需要额外表示每张扑克牌。只需要最后输出的时候根据第i张牌，来判断i所对应的扑克牌的字符串表示。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
 <li><p>输出格式，最后一个数据后面无空格</p>
