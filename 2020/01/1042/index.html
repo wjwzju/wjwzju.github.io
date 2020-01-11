@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gambler">
+<meta name="description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT (甲级) 1042 Shuffling Machine (20分)">
 <meta property="og:url" content="https://wjwzju.github.io/2020/01/1042/index.html">
 <meta property="og:site_name" content="On the way">
-<meta property="og:description" content="Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gambler">
+<meta property="og:description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
 <meta property="article:published_time" content="2020-01-04T12:16:38.000Z">
-<meta property="article:modified_time" content="2020-01-09T12:17:34.031Z">
+<meta property="article:modified_time" content="2020-01-11T09:14:17.324Z">
 <meta property="article:author" content="Jingwen">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="PAT">
@@ -469,7 +469,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  979字
+                  981字
                 </span>
               
 
@@ -506,7 +506,7 @@
       
 
       
-        <p>Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.</p>
+        <h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.</p>
 <p>The machine shuffles a deck of 54 cards according to a given random order and repeats for a given number of times. It is assumed that the initial status of a card deck is in the following order:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S1, S2, ..., S13, </span><br><span class="line">H1, H2, ..., H13, </span><br><span class="line">C1, C2, ..., C13, </span><br><span class="line">D1, D2, ..., D13, </span><br><span class="line">J1, J2</span><br></pre></td></tr></table></figure>
 
@@ -525,22 +525,17 @@
 
 <a id="more"></a>
 
-<p><font color=#0099ff size=4 face="黑体">题目大意:</font></p>
-<p>　　给定次数和一个序列。按序打乱一副扑克牌。</p>
-<p><font color=#0099ff size=4 face="黑体">分类:</font></p>
-<p>　　简单模拟</p>
-<p><font color=#0099ff size=4 face="黑体">思路:</font></p>
-<p>　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。</p>
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定次数和一个序列。按序打乱一副扑克牌。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　简单模拟</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。</p>
 <p>　　后来考虑用两个数组start（排序前的序列），end（排序后的序列）直接表示该位置是第几张牌。这样每次处理的是位置信息，而且不需要额外表示每张扑克牌。只需要最后输出的时候根据第i张牌，来判断i所对应的扑克牌的字符串表示。</p>
-<p><font color=#0099ff size=4 face="黑体">注意事项:</font></p>
-<ol>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
 <li><p>输出格式，最后一个数据后面无空格</p>
 </li>
 <li><p>输入的数据表示的是第i张牌，存放在数组的索引应该是i-1</p>
 </li>
 </ol>
-<p><font color=#0099ff size=4 face="黑体">代码:</font></p>
-<p>方法1：</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a><font color=#0099ff size=4 face="黑体">代码:</font></h1><p>方法1：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用字符串数组存放序列</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, i, j;</span><br><span class="line">    <span class="keyword">int</span> order[<span class="number">54</span>];</span><br><span class="line">    <span class="built_in">string</span> cards[<span class="number">54</span>];</span><br><span class="line">    <span class="built_in">string</span> cards2[<span class="number">54</span>];</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">"SHCD"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">54</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; order[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//生成字符串数组</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; <span class="number">14</span>; j++)&#123;</span><br><span class="line">            cards[i*<span class="number">13</span> + j - <span class="number">1</span>] = s[i] + to_string(j); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cards[<span class="number">52</span>] = <span class="string">"J1"</span>;</span><br><span class="line">    cards[<span class="number">53</span>] = <span class="string">"J2"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">54</span>; j++)&#123;</span><br><span class="line">            cards2[order[j]<span class="number">-1</span>] = cards[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">54</span>; j++)&#123;</span><br><span class="line">            cards[j] = cards2[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">53</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; cards2[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cards2[<span class="number">53</span>];</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>方法2：</p>
@@ -669,8 +664,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -689,7 +693,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -735,6 +739,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原题"><span class="nav-number">1.</span> <span class="nav-text">原题:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目大意"><span class="nav-number">2.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">3.</span> <span class="nav-text">分类:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">4.</span> <span class="nav-text">思路:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -746,7 +766,7 @@
             <!--h3 class="widget-title">Tag Cloud</h3-->
             <div id="myCanvasContainer" class="widget tagcloud">
                 <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conda/" rel="tag">conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with-xla/" rel="tag">with xla</a><span class="tag-list-count">1</span></li></ul>
+                    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conda/" rel="tag">conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with-xla/" rel="tag">with xla</a><span class="tag-list-count">1</span></li></ul>
                 </canvas>
             </div>
         </div>
@@ -782,7 +802,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">2.2k</span>
+    <span title="本站总字数">3k</span>
   
 </div>
 
