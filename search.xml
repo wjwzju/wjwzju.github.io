@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PAT (甲级) test PAT Mooncake (25分)</title>
+    <url>/2020/01/1070/</url>
+    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Mooncake is a Chinese bakery product traditionally eaten during the Mid-Autumn Festival. Many types of fillings and crusts can be found in traditional mooncakes according to the region’s culture. Now given the inventory amounts and the prices of all kinds of the mooncakes, together with the maximum total demand of the market, you are supposed to tell the maximum profit that can be made.</p>
+<p>Note: partial inventory storage can be taken. The sample shows the following situation: given three kinds of mooncakes with inventory amounts being 180, 150, and 100 thousand tons, and the prices being 7.5, 7.2, and 4.5 billion yuans. If the market demand can be at most 200 thousand tons, the best we can do is to sell 150 thousand tons of the second kind of mooncake, and 50 thousand tons of the third kind. Hence the total profit is 7.2 + 4.5/2 = 9.45 (billion yuans).</p>
+<p><font size=4>Input Specification:</font></p>
+<p>Each input file contains one test case. For each case, the first line contains 2 positive integers N (≤1000), the number of different kinds of mooncakes, and D (≤500 thousand tons), the maximum total demand of the market. Then the second line gives the positive inventory amounts (in thousand tons), and the third line gives the positive prices (in billion yuans) of N kinds of mooncakes. All the numbers in a line are separated by a space.</p>
+<p><font size=4>Output Specification:</font></p>
+<p>For each test case, print the maximum profit (in billion yuans) in one line, accurate up to 2 decimal places.</p>
+<p><font size=4>Sample Input</font></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3 200</span><br><span class="line">180 150 100</span><br><span class="line">7.5 7.2 4.5</span><br></pre></td></tr></table></figure>
+
+<p><font size=4>Sample Output</font></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">9.45</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定N种月饼的库存数量和总价，以及市场需要的月饼总量D。判断售卖月饼可以获得的最大利润。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　贪心</p>
+<h1 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路:"></a><font color=#0099ff size=4 face="黑体">题目思路:</font></h1><p>　　算是一种简单的贪心算法。想要求得最大利润，就要优先考虑单价最高的月饼。所以：</p>
+<ol>
+<li><p>计算每种月饼的单价，并按降序排列。遍历月饼序列</p>
+</li>
+<li><p>如果该月饼库存 &lt; 市场需求量，更新总收益、市场需求量</p>
+<p>总收益 += 该月饼总价；</p>
+<p>市场需求量 -= 该月饼总量；</p>
+</li>
+<li><p>如果该月饼库存 &gt; 市场需求量，则计算总收益并停止遍历</p>
+<p>总收益 += 该月饼总价 * （市场需求量 / 月饼总量）</p>
+</li>
+</ol>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
+<li><p>遍历月饼序列时要加判断i &lt; N，否则会越界错误</p>
+</li>
+<li><p>题中没有说月饼总量是int</p>
+</li>
+</ol>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a><font color=#0099ff size=4 face="黑体">代码:</font></h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//简单贪心</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mooncake</span>&#123;</span></span><br><span class="line">    <span class="keyword">float</span> amount; <span class="comment">//月饼总量</span></span><br><span class="line">    <span class="keyword">float</span> price; <span class="comment">//价格</span></span><br><span class="line">    <span class="keyword">float</span> price_per; <span class="comment">//单价</span></span><br><span class="line">&#125;mc[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(mooncake a, mooncake b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.price_per &gt; b.price_per;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, N; <span class="keyword">float</span> D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %f"</span>, &amp;N, &amp;D);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%f"</span>, &amp;mc[i].amount);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%f"</span>, &amp;mc[i].price);</span><br><span class="line">        mc[i].price_per = mc[i].price / mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(mc, mc + N, cmp);</span><br><span class="line">    <span class="keyword">float</span> max_profit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; D - mc[i].amount &gt;= <span class="number">0</span> &amp;&amp; i &lt; N; i++)&#123;</span><br><span class="line">        max_profit += mc[i].price;</span><br><span class="line">        D -= mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i != N)&#123;    </span><br><span class="line">        max_profit += mc[i].price * D / mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f"</span>, max_profit);</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+        <category>PAT</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PAT (甲级) 1025 PAT Ranking (25分)</title>
     <url>/2020/01/1025/</url>
-    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><br>
-Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.
-
+    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.</p>
 <p><font size=4>Input Specification:</font></p>
 <p>Each input file contains one test case. For each case, the first line contains a positive number N (≤100), the number of test locations. Then N ranklists follow, each starts with a line containing a positive integer K (≤300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
 <p><font size=4>Output Specification:</font></p>
@@ -21,15 +67,9 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
 
 <a id="more"></a>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><br>
-　　PAT考试，有N个考场，每个考场有不同的学生。现给出每个考场中学生的准考证号和分数，要求对学生按分数从高到低排序，并输出考生的准考证号、排名、考场编号、考场内排名。
-
-<h1 id="题目分类"><a href="#题目分类" class="headerlink" title="题目分类:"></a><font color=#0099ff size=4 face="黑体">题目分类:</font></h1><br>
-　　排序
-
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><br>
-　　构建结构体存放学生信息，利用sort函数，编写排序函数cmp方法进行排序。
-
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　PAT考试，有N个考场，每个考场有不同的学生。现给出每个考场中学生的准考证号和分数，要求对学生按分数从高到低排序，并输出考生的准考证号、排名、考场编号、考场内排名。</p>
+<h1 id="题目分类"><a href="#题目分类" class="headerlink" title="题目分类:"></a><font color=#0099ff size=4 face="黑体">题目分类:</font></h1><p>　　排序</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　构建结构体存放学生信息，利用sort函数，编写排序函数cmp方法进行排序。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
 <li>排序函数cmp的编写：</li>
 </ol>
@@ -56,9 +96,7 @@ Programming Ability Test (PAT) is organized by the College of Computer Science a
   <entry>
     <title>PAT (甲级) 1036 Boys vs Girls (25分)</title>
     <url>/2020/01/1036/</url>
-    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><br>
-This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of all the female students.
-
+    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of all the female students.</p>
 <p><font size=4>Input Specification:</font></p>
 <p>Each input file contains one test case. Each case contains a positive integer N, followed by N lines of student information. Each line contains a student’s name, gender, ID and grade, separated by a space, where name and ID are strings of no more than 10 characters with no space, gender is either F (female) or M (male), and grade is an integer between 0 and 100. It is guaranteed that all the grades are distinct.</p>
 <p><font size=4>Output Specification:</font></p>
@@ -77,15 +115,9 @@ This time you are asked to tell the difference between the lowest grade of all t
 
 <a id="more"></a>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><br>
-　　给定N组学生信息，输出女生中的最高分获得者的信息与男生中最低分获得者的信息，并输出他们的分数差。如果不存在女生或者男生，则对应获得者信息处输出Absent，同时差值处输出NA。
-
-<h1 id="题目分类"><a href="#题目分类" class="headerlink" title="题目分类:"></a><font color=#0099ff size=4 face="黑体">题目分类:</font></h1><br>
-　　简单模拟
-
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><br>
-　　使用字符数组*max_f_name*,*max_f_ID*表示女生最高分学生的信息，*min_m_name*, *min_m_ID*表示男生最低分学生的信息，在输入的时候比较并更新最高/低分，同时记录对应学生的信息。
-
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定N组学生信息，输出女生中的最高分获得者的信息与男生中最低分获得者的信息，并输出他们的分数差。如果不存在女生或者男生，则对应获得者信息处输出Absent，同时差值处输出NA。</p>
+<h1 id="题目分类"><a href="#题目分类" class="headerlink" title="题目分类:"></a><font color=#0099ff size=4 face="黑体">题目分类:</font></h1><p>　　简单模拟</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　使用字符数组<em>max_f_name</em>,<em>max_f_ID<em>表示女生最高分学生的信息，</em>min_m_name</em>, <em>min_m_ID</em>表示男生最低分学生的信息，在输入的时候比较并更新最高/低分，同时记录对应学生的信息。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
 <li><p>表示name，ID的char数组的大小必须要大于10，如果设置10，提交时会出现“运行时错误”的问题。（这个问题应该在于c中char数组的大小应该等于元素数+1，因为要存终止符 ‘\0’ ）</p>
 </li>
@@ -106,9 +138,7 @@ This time you are asked to tell the difference between the lowest grade of all t
   <entry>
     <title>PAT (甲级) 1042 Shuffling Machine (20分)</title>
     <url>/2020/01/1042/</url>
-    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><br>
-Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid "inside jobs" where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.
-
+    <content><![CDATA[<h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.</p>
 <p>The machine shuffles a deck of 54 cards according to a given random order and repeats for a given number of times. It is assumed that the initial status of a card deck is in the following order:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">S1, S2, ..., S13, </span><br><span class="line">H1, H2, ..., H13, </span><br><span class="line">C1, C2, ..., C13, </span><br><span class="line">D1, D2, ..., D13, </span><br><span class="line">J1, J2</span><br></pre></td></tr></table></figure>
 
@@ -127,15 +157,9 @@ Shuffling is a procedure used to randomize a deck of playing cards. Because stan
 
 <a id="more"></a>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><br>
-　　给定次数和一个序列。按序打乱一副扑克牌。
-
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><br>
-　　简单模拟
-
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><br>
-　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。
-
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定次数和一个序列。按序打乱一副扑克牌。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　简单模拟</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。</p>
 <p>　　后来考虑用两个数组start（排序前的序列），end（排序后的序列）直接表示该位置是第几张牌。这样每次处理的是位置信息，而且不需要额外表示每张扑克牌。只需要最后输出的时候根据第i张牌，来判断i所对应的扑克牌的字符串表示。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
 <li><p>输出格式，最后一个数据后面无空格</p>
