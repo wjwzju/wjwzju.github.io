@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="原题:Mooncake is a Chinese bakery product traditionally eaten during the Mid-Autumn Festival. Many types of fillings and crusts can be found in traditional mooncakes according to the region’s culture. N">
+<meta name="description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT (甲级) 1070 PAT Mooncake (25分)">
-<meta property="og:url" content="https://wjwzju.github.io/1070.html">
+<meta property="og:title" content="PAT (甲级) 1042 Shuffling Machine (20分)">
+<meta property="og:url" content="https://wjwzju.github.io/pat/advanced/1042.html">
 <meta property="og:site_name" content="On the way">
-<meta property="og:description" content="原题:Mooncake is a Chinese bakery product traditionally eaten during the Mid-Autumn Festival. Many types of fillings and crusts can be found in traditional mooncakes according to the region’s culture. N">
+<meta property="og:description" content="原题:Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamb">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-01-12T11:16:57.000Z">
-<meta property="article:modified_time" content="2020-01-12T11:16:57.000Z">
+<meta property="article:published_time" content="2020-01-04T12:16:38.000Z">
+<meta property="article:modified_time" content="2020-01-04T12:16:38.000Z">
 <meta property="article:author" content="Jingwen">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="PAT">
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://wjwzju.github.io/1070.html"/>
+  <link rel="canonical" href="https://wjwzju.github.io/pat/advanced/1042.html"/>
 
 
 
 
 
-  <title>PAT (甲级) 1070 PAT Mooncake (25分) | On the way</title>
+  <title>PAT (甲级) 1042 Shuffling Machine (20分) | On the way</title>
   
 
 
@@ -156,7 +156,7 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wjwzju.github.io/1070.html">
+    <link itemprop="mainEntityOfPage" href="https://wjwzju.github.io/pat/advanced/1042.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT (甲级) 1070 PAT Mooncake (25分)</h1>
+          <h1 class="post-title" itemprop="name headline">PAT (甲级) 1042 Shuffling Machine (20分)</h1>
         
 
         <div class="post-meta">
@@ -367,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-12T19:16:57+08:00">
-                2020-01-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T20:16:38+08:00">
+                2020-01-04
               </time>
             
 
@@ -430,9 +430,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/1070.html#comments" itemprop="discussionUrl">
+                <a href="/pat/advanced/1042.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/1070.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="/pat/advanced/1042.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -440,7 +440,7 @@
 
           
           
-             <span id="/1070.html" class="leancloud_visitors" data-flag-title="PAT (甲级) 1070 PAT Mooncake (25分)">
+             <span id="/pat/advanced/1042.html" class="leancloud_visitors" data-flag-title="PAT (甲级) 1042 Shuffling Machine (20分)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  679字
+                  1k字
                 </span>
               
 
@@ -486,7 +486,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3mins
+                  5mins
                 </span>
               
             </div>
@@ -507,41 +507,37 @@
       
 
       
-        <h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Mooncake is a Chinese bakery product traditionally eaten during the Mid-Autumn Festival. Many types of fillings and crusts can be found in traditional mooncakes according to the region’s culture. Now given the inventory amounts and the prices of all kinds of the mooncakes, together with the maximum total demand of the market, you are supposed to tell the maximum profit that can be made.</p>
-<p>Note: partial inventory storage can be taken. The sample shows the following situation: given three kinds of mooncakes with inventory amounts being 180, 150, and 100 thousand tons, and the prices being 7.5, 7.2, and 4.5 billion yuans. If the market demand can be at most 200 thousand tons, the best we can do is to sell 150 thousand tons of the second kind of mooncake, and 50 thousand tons of the third kind. Hence the total profit is 7.2 + 4.5/2 = 9.45 (billion yuans).</p>
+        <h1 id="原题"><a href="#原题" class="headerlink" title="原题:"></a><font color=#0099ff size=4 face="黑体">原题:</font></h1><p>Shuffling is a procedure used to randomize a deck of playing cards. Because standard shuffling techniques are seen as weak, and in order to avoid “inside jobs” where employees collaborate with gamblers by performing inadequate shuffles, many casinos employ automatic shuffling machines. Your task is to simulate a shuffling machine.</p>
+<p>The machine shuffles a deck of 54 cards according to a given random order and repeats for a given number of times. It is assumed that the initial status of a card deck is in the following order:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">S1, S2, ..., S13, </span><br><span class="line">H1, H2, ..., H13, </span><br><span class="line">C1, C2, ..., C13, </span><br><span class="line">D1, D2, ..., D13, </span><br><span class="line">J1, J2</span><br></pre></td></tr></table></figure>
+<p>where “S” stands for “Spade”, “H” for “Heart”, “C” for “Club”, “D” for “Diamond”, and “J” for “Joker”. A given order is a permutation of distinct integers in [1, 54]. If the number at the i-th position is j, it means to move the card from position i to position j. For example, suppose we only have 5 cards: S3, H5, C1, D13 and J2. Given a shuffling order {4, 2, 5, 3, 1}, the result will be: J2, H5, D13, S3, C1. If we are to repeat the shuffling again, the result will be: C1, H5, S3, J2, D13.</p>
 <p><font size=4>Input Specification:</font></p>
-<p>Each input file contains one test case. For each case, the first line contains 2 positive integers N (≤1000), the number of different kinds of mooncakes, and D (≤500 thousand tons), the maximum total demand of the market. Then the second line gives the positive inventory amounts (in thousand tons), and the third line gives the positive prices (in billion yuans) of N kinds of mooncakes. All the numbers in a line are separated by a space.</p>
+<p>Each input file contains one test case. For each case, the first line contains a positive integer K (≤20) which is the number of repeat times. Then the next line contains the given order. All the numbers in a line are separated by a space.</p>
 <p><font size=4>Output Specification:</font></p>
-<p>For each test case, print the maximum profit (in billion yuans) in one line, accurate up to 2 decimal places.</p>
-<p><font size=4>Sample Input</font></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 200</span><br><span class="line">180 150 100</span><br><span class="line">7.5 7.2 4.5</span><br></pre></td></tr></table></figure>
-
-<p><font size=4>Sample Output</font></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9.45</span><br></pre></td></tr></table></figure>
+<p>For each test case, print the shuffling results in one line. All the cards are separated by a space, and there must be no extra space at the end of the line.</p>
+<p><font size=4>Sample Input:</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">36 52 37 38 3 39 40 53 54 41 11 12 13 42 43 44 2 4 23 24 25 26 27 6 7 8 48 49 50 51 9 10 14 15 16 5 17 18 19 1 20 21 22 28 29 30 31 32 33 34 35 45 46 47</span><br></pre></td></tr></table></figure>
+<p><font size=4>Sample Output:</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S7 C11 C10 C12 S1 H7 H8 H9 D8 D9 S11 S12 S13 D10 D11 D12 S3 S4 S6 S10 H1 H2 C13 D2 D3 D4 H6 H3 D13 J1 J2 C1 C2 C3 C4 D1 S5 H5 H11 H12 C6 C7 C8 C9 S2 S8 S9 H10 D5 D6 D7 H4 H13 C5</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定N种月饼的库存数量和总价，以及市场需要的月饼总量D。判断售卖月饼可以获得的最大利润。</p>
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　贪心</p>
-<h1 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路:"></a><font color=#0099ff size=4 face="黑体">题目思路:</font></h1><p>　　算是一种简单的贪心算法。想要求得最大利润，就要优先考虑单价最高的月饼。所以：</p>
-<ol>
-<li><p>计算每种月饼的单价，并按降序排列。遍历月饼序列</p>
-</li>
-<li><p>如果该月饼库存 &lt; 市场需求量，更新总收益、市场需求量</p>
-<p>总收益 += 该月饼总价；</p>
-<p>市场需求量 -= 该月饼总量；</p>
-</li>
-<li><p>如果该月饼库存 &gt; 市场需求量，则计算总收益并停止遍历</p>
-<p>总收益 += 该月饼总价 * （市场需求量 / 月饼总量）</p>
-</li>
-</ol>
+<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a><font color=#0099ff size=4 face="黑体">题目大意:</font></h1><p>　　给定次数和一个序列。按序打乱一副扑克牌。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a><font color=#0099ff size=4 face="黑体">分类:</font></h1><p>　　简单模拟</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路:"></a><font color=#0099ff size=4 face="黑体">思路:</font></h1><p>　　最初没有深入思考直接按照题目要求去做，构建了两个字符串数组cards（存放排序前的序列），cards2（存放排序后的序列）。这种做法的问题在于需要去额外生成表示扑克牌的字符串数组，而且每次打乱顺序处理的都是字符串，比价麻烦。</p>
+<p>　　后来考虑用两个数组start（排序前的序列），end（排序后的序列）直接表示该位置是第几张牌。这样每次处理的是位置信息，而且不需要额外表示每张扑克牌。只需要最后输出的时候根据第i张牌，来判断i所对应的扑克牌的字符串表示。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a><font color=#0099ff size=4 face="黑体">注意事项:</font></h1><ol>
-<li><p>遍历月饼序列时要加判断i &lt; N，否则会越界错误</p>
+<li><p>输出格式，最后一个数据后面无空格</p>
 </li>
-<li><p>题中没有说月饼总量是int</p>
+<li><p>输入的数据表示的是第i张牌，存放在数组的索引应该是i-1</p>
 </li>
 </ol>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a><font color=#0099ff size=4 face="黑体">代码:</font></h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单贪心</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mooncake</span>&#123;</span></span><br><span class="line">    <span class="keyword">float</span> amount; <span class="comment">//月饼总量</span></span><br><span class="line">    <span class="keyword">float</span> price; <span class="comment">//价格</span></span><br><span class="line">    <span class="keyword">float</span> price_per; <span class="comment">//单价</span></span><br><span class="line">&#125;mc[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(mooncake a, mooncake b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.price_per &gt; b.price_per;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, N; <span class="keyword">float</span> D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %f&quot;</span>, &amp;N, &amp;D);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>, &amp;mc[i].amount);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>, &amp;mc[i].price);</span><br><span class="line">        mc[i].price_per = mc[i].price / mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(mc, mc + N, cmp);</span><br><span class="line">    <span class="keyword">float</span> max_profit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; D - mc[i].amount &gt;= <span class="number">0</span> &amp;&amp; i &lt; N; i++)&#123;</span><br><span class="line">        max_profit += mc[i].price;</span><br><span class="line">        D -= mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i != N)&#123;    </span><br><span class="line">        max_profit += mc[i].price * D / mc[i].amount;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2f&quot;</span>, max_profit);</span><br><span class="line">    <span class="comment">//system(&quot;pause&quot;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码:"></a><font color=#0099ff size=4 face="黑体">代码:</font></h1><p>方法1：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用字符串数组存放序列</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, i, j;</span><br><span class="line">    <span class="type">int</span> order[<span class="number">54</span>];</span><br><span class="line">    string cards[<span class="number">54</span>];</span><br><span class="line">    string cards2[<span class="number">54</span>];</span><br><span class="line">    string s = <span class="string">&quot;SHCD&quot;</span>;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">54</span>; i++)&#123;</span><br><span class="line">        cin &gt;&gt; order[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//生成字符串数组</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; <span class="number">14</span>; j++)&#123;</span><br><span class="line">            cards[i*<span class="number">13</span> + j - <span class="number">1</span>] = s[i] + <span class="built_in">to_string</span>(j); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cards[<span class="number">52</span>] = <span class="string">&quot;J1&quot;</span>;</span><br><span class="line">    cards[<span class="number">53</span>] = <span class="string">&quot;J2&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">54</span>; j++)&#123;</span><br><span class="line">            cards2[order[j]<span class="number">-1</span>] = cards[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">54</span>; j++)&#123;</span><br><span class="line">            cards[j] = cards2[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">53</span>; i++)&#123;</span><br><span class="line">        cout &lt;&lt; cards2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; cards2[<span class="number">53</span>];</span><br><span class="line">    <span class="comment">//system(&quot;pause&quot;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法2：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用位置信息处理</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">54</span>;</span><br><span class="line"><span class="type">char</span> s[<span class="number">5</span>] = &#123;<span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;J&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, i, j;</span><br><span class="line">    <span class="type">int</span> start[N], end[N], order[N];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        start[i] = i;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;order[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; N; j++)&#123;</span><br><span class="line">            end[order[j]<span class="number">-1</span>] = start[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; N; j++)&#123;</span><br><span class="line">            start[j] = end[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c%d&quot;</span>, s[end[i]/<span class="number">13</span>], end[i]%<span class="number">13</span> + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(i != N - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//system(&quot;pause&quot;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -561,7 +557,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wjwzju.github.io/1070.html" title="PAT (甲级) 1070 PAT Mooncake (25分)">https://wjwzju.github.io/1070.html</a>
+    <a href="https://wjwzju.github.io/pat/advanced/1042.html" title="PAT (甲级) 1042 Shuffling Machine (20分)">https://wjwzju.github.io/pat/advanced/1042.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -591,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1025.html" rel="next" title="PAT (甲级) 1025 PAT Ranking (25分)">
-                <i class="fa fa-chevron-left"></i> PAT (甲级) 1025 PAT Ranking (25分)
+              <a href="/2019/12/conda%E5%91%BD%E4%BB%A4/" rel="next" title="conda命令">
+                <i class="fa fa-chevron-left"></i> conda命令
               </a>
             
           </div>
@@ -601,8 +597,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/1099.html" rel="prev" title="PAT (甲级) 1099 Build A Binary Search Tree (30分)">
-                PAT (甲级) 1099 Build A Binary Search Tree (30分) <i class="fa fa-chevron-right"></i>
+              <a href="/pat/advanced/1036.html" rel="prev" title="PAT (甲级) 1036 Boys vs Girls (25分)">
+                PAT (甲级) 1036 Boys vs Girls (25分) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -750,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">原题:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="nav-number">2.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">分类:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">题目思路:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">注意事项:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">代码:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">原题:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="nav-number">2.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">分类:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">思路:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">注意事项:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">代码:</span></a></li></ol></div>
             
 
           </div>
@@ -972,9 +968,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://wjwzju.github.io/1070.html';
-          this.page.identifier = '/1070.html';
-          this.page.title = 'PAT (甲级) 1070 PAT Mooncake (25分)';
+          this.page.url = 'https://wjwzju.github.io/pat/advanced/1042.html';
+          this.page.identifier = '/pat/advanced/1042.html';
+          this.page.title = 'PAT (甲级) 1042 Shuffling Machine (20分)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://test.disqus.com/embed.js';
